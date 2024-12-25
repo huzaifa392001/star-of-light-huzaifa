@@ -1,39 +1,45 @@
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Layout from "@/components/Layout/Layout";
-import { useScrollTo } from "react-use-window-scroll";
+import Lenis from "lenis";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function App({ Component, pageProps }: AppProps) {
-  const lenisRef = useRef<any>();
+  const lenisSetup = () => {
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, []);
+    lenis.scrollTo(document.querySelector<HTMLElement>("#home") || 0);
 
-  useEffect(() => {
-    function update(time: number) {
-      lenisRef.current?.lenis?.raf(time * 1000);
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    gsap.ticker.add(update);
+    requestAnimationFrame(raf);
 
-    return () => {
-      gsap.ticker.remove(update);
-    };
-  });
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.getAttribute("href");
+        if (target) lenis.scrollTo(target);
+      });
+    });
+  };
+
+  useEffect(() => {
+    lenisSetup();
+  }, []);
 
   return (
-    <ReactLenis ref={lenisRef} autoRaf={false} root>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ReactLenis>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }

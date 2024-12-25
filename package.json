@@ -11,7 +11,6 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@next/bundle-analyzer": "^14.2.11",
-    "@studio-freight/react-lenis": "^0.0.47",
     "@types/react-lottie": "^1.2.10",
     "gsap": "file:gsap-bonus.tgz",
     "lodash": "^4.17.21",
@@ -31,7 +30,8 @@
     "split-type": "^0.3.4",
     "star-of-life": "file:",
     "three": "^0.168.0",
-    "valtio": "^1.13.2"
+    "valtio": "^1.13.2",
+    "lenis": "^1.1.18"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",

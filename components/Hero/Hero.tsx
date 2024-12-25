@@ -22,6 +22,7 @@ const Hero: React.FC = () => {
     triggerOnce: true,
     threshold: 0.5,
   });
+  const [currentImage, setCurrentImage] = useState<"first" | "second">("first");
 
   const loadAnimationData = async (showEnd: boolean) => {
     try {
@@ -39,6 +40,15 @@ const Hero: React.FC = () => {
       loadAnimationData(showData2);
     }
   }, [size, showData2, inView]);
+
+  useEffect(() => {
+    if (currentImage === "first") {
+      const timer = setTimeout(() => {
+        setCurrentImage("second");
+      }, 8280);
+      return () => clearTimeout(timer); // Cleanup timeout on unmount
+    }
+  }, [currentImage]);
 
   const handleAnimationComplete = () => {
     if (!showData2) {
@@ -58,17 +68,49 @@ const Hero: React.FC = () => {
         <HeroArrowDown />
       </div>
       <div className={s.lottie}>
-        {animationData && (
-          <Lottie
-            options={{
-              loop: showData2,
-              autoplay: true,
-              animationData: animationData,
-            }}
-            eventListeners={[
-              { eventName: "complete", callback: handleAnimationComplete },
-            ]}
-          />
+        {(size?.width ?? 0) > 640 ? (
+          animationData && (
+            <Lottie
+              options={{
+                loop: showData2,
+                autoplay: true,
+                animationData: animationData,
+              }}
+              eventListeners={[
+                { eventName: "complete", callback: handleAnimationComplete },
+              ]}
+            />
+          )
+        ) : (
+          <>
+            {currentImage === "first" ? (
+              <Image
+                style={{
+                  width: "80%",
+                  height: "auto",
+                  display: "block",
+                  margin: "0 auto",
+                }}
+                src="/firstPart.svg"
+                alt="First Mobile Animation"
+                width={500}
+                height={500}
+              />
+            ) : (
+              <Image
+                style={{
+                  width: "80%",
+                  height: "auto",
+                  display: "block",
+                  margin: "0 auto",
+                }}
+                src="/secondPart.svg"
+                alt="Second Mobile Animation"
+                width={500}
+                height={500}
+              />
+            )}
+          </>
         )}
       </div>
     </section>

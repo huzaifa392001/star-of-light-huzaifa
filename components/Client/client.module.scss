@@ -47,15 +47,17 @@
   text-align: center;
   font-weight: 500;
   line-height: 0.9;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 5rem 0;
   @include lg {
     font-size: 11rem;
     text-align: center;
     line-height: 0.8;
+    height: 100vh;
+    padding: 0;
   }
   svg {
     width: 60vw;
