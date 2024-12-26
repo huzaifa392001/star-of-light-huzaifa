@@ -20,7 +20,6 @@ function HeadingElement() {
                             trigger: elementAnimation.current,
                             start: "top 10%",
                             toggleActions: "play none reverse none",
-                            markers: true
                         },
                     });
                     tl.to('.shape', {

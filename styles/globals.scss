@@ -86,6 +86,14 @@ html.lenis body {
   pointer-events: none;
 }
 
+.lenis.lenis-scrolling:not(.lenis-smooth) body {
+  filter: blur(20px);
+}
+
+body {
+  transition: all 0.3s ease-in-out;
+}
+
 main {
   position: relative;
   min-height: 100vh;
@@ -126,4 +134,3 @@ main {
 .client-para-word {
   clip-path: inset(0% 100% 0% 0%);
 }
-
