@@ -556,6 +556,20 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    .imgCont,
+    .content {
+      @include lg {
+        max-width: 50%;
+      }
+    }
+    .content {
+      @include lg {
+        max-width: 48%;
+        p {
+          max-width: 100%;
+        }
+      }
+    }
   }
   @include sm {
     max-width: 45%;

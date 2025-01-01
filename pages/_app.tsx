@@ -10,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function App({ Component, pageProps }: AppProps) {
   const lenisSetup = () => {
+    if (window.innerWidth <= 768) return; // Disable Lenis for screens narrower than 768px
+
     const lenis = new Lenis({
       duration: 1.5,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
