@@ -589,7 +589,7 @@
   }
 
   &:has(.video) {
-    height: 390px;
+    height: auto;
     border: 5px solid #000;
     border-radius: 30px;
     overflow: hidden;
@@ -603,7 +603,7 @@
     height: 100%;
     object-fit: cover;
     margin: auto;
-    transform: scale(1.25);
+    aspect-ratio: 16/9;
   }
   @include sm {
     height: 250px;
