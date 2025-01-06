@@ -587,11 +587,19 @@
     object-fit: contain;
   }
 
+  &:has(.video) {
+    height: 390px;
+    border: 5px solid #000;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
   .video {
     width: 100%;
     height: 100%;
-    border: 2px solid #000;
-    border-bottom: 10px solid #000;
+    object-fit: cover;
+    margin: auto;
+    transform: scale(1.25);
   }
   @include sm {
     height: 250px;
@@ -600,19 +608,19 @@
     }
   }
   @include lg {
-    height: 400px;
+    height: 600px;
     &.longImg {
-      height: 800px;
+      height: 1100px;
     }
-    .video {
-      height: 90%;
-    }
+    // .video {
+    //   height: 90%;
+    // }
   }
 }
 
 .content {
   text-align: center;
-  margin-top: 15px;
+  // margin-top: 15px;
 
   @include sm {
     text-align: initial;

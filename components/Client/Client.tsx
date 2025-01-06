@@ -255,7 +255,6 @@ const Client = () => {
   useEffect(() => {
     const para = document.querySelector(".client-grid-para") as HTMLElement | null;
     const paraHeight = para?.getBoundingClientRect().height;
-    console.log(paraHeight);
     setHeight(paraHeight);
   }, []); // Add [] to ensure this runs only once after the component mounts.
 

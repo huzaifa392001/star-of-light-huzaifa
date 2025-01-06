@@ -92,7 +92,6 @@ const Header = ({
                 (comp) => comp.heading?.toLowerCase() === id?.toLowerCase()
               );
               if (matchedComponent?.heading === 'Work') {
-                console.log("headerNav.current=> ", headerNav.current)
                 gsap.to(".header_dotWrapper__pdQ8H", {
                   autoAlpha: 1,
                   ease: "circ.in",

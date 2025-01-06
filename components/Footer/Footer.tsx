@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { memo } from "react";
 import { useRouter } from "next/router";
+import Lenis from "lenis";
 
 const Footer = () => {
   const container = useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ const Footer = () => {
     () => {
       gsap.timeline({
         scrollTrigger: {
-          trigger: container.current,
+          trigger: container?.current,
           start: "top center",
           toggleActions: "play none none reverse",
           fastScrollEnd: true,
@@ -40,9 +41,9 @@ const Footer = () => {
   );
 
   useEffect(() => {
-    if (container.current && starRef.current) {
+    if (container?.current && starRef.current) {
       const handleMouseMove = (e: MouseEvent) => {
-        const rect = container.current!.getBoundingClientRect();
+        const rect = container?.current!.getBoundingClientRect();
         const x = e.clientX - (rect.left + rect.width / 2);
         const y = e.clientY - (rect.top + rect.height / 2);
         gsap.to(starRef.current, {
@@ -62,15 +63,76 @@ const Footer = () => {
         });
       };
 
-      container.current.addEventListener("mousemove", handleMouseMove);
-      container.current.addEventListener("mouseleave", handleMouseLeave);
+      container?.current.addEventListener("mousemove", handleMouseMove);
+      container?.current.addEventListener("mouseleave", handleMouseLeave);
 
       return () => {
-        container.current!.removeEventListener("mousemove", handleMouseMove);
-        container.current!.removeEventListener("mouseleave", handleMouseLeave);
+        container?.current!.removeEventListener("mousemove", handleMouseMove);
+        container?.current!.removeEventListener("mouseleave", handleMouseLeave);
       };
     }
   }, []);
+
+
+  const lenisRef = useRef<any>(null); // Using ref to persist Lenis instance
+
+  const lenisSetup = () => {
+    if (window.innerWidth <= 768) return; // Disable Lenis for small screens
+
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    lenisRef.current = lenis; // Assign instance to ref
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.getAttribute("href");
+        if (target) lenis.scrollTo(target);
+      });
+    });
+  };
+
+  const scrollToTop = () => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0); // Use Lenis for smooth scroll
+      console.log("Lenis scrolled to top");
+    } else {
+      window.scrollTo(0, 0); // Fallback for normal scrolling
+      console.log("Window scrolled to top");
+    }
+  };
+
+  useEffect(() => {
+    lenisSetup();
+  }, []);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      scrollToTop();
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      scrollToTop();
+    }, 1500);
+  })
 
   return (
     <footer ref={container} id="footer" className={s.main}>
