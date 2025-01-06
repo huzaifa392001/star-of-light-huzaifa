@@ -626,12 +626,8 @@
 }
 
 .content {
-  text-align: center;
-  // margin-top: 15px;
+  text-align: start;
 
-  @include sm {
-    text-align: initial;
-  }
   h2 {
     font-size: 2rem;
     line-height: calc(1.5625rem * 1.5);
