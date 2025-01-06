@@ -610,11 +610,17 @@
   @include lg {
     height: 600px;
     &.longImg {
-      height: 1100px;
+      height: 800px;
     }
     // .video {
     //   height: 90%;
     // }
+  }
+
+  @include xxxl {
+    &.longImg {
+      height: 1100px;
+    }
   }
 }
 
