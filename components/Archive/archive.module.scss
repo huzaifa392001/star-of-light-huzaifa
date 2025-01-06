@@ -585,6 +585,7 @@
   height: 350px;
   img {
     object-fit: contain;
+    object-position: bottom;
   }
 
   &:has(.video) {
@@ -608,7 +609,7 @@
     }
   }
   @include lg {
-    height: 600px;
+    height: 400px;
     &.longImg {
       height: 800px;
     }
