@@ -17,7 +17,7 @@ const Client = () => {
   const heading = useRef<HTMLDivElement>(null);
   const leftColumnRef = useRef<HTMLDivElement>(null);
   const rightColumnRef = useRef<HTMLDivElement>(null);
-  const images = [...Array(83)];
+  const images = [...Array(28)];
   const [height, setHeight] = useState<number | undefined>();
   const elementAnimation = useRef<SVGSVGElement>(null);
   const mm = gsap.matchMedia(); // GSAP MatchMedia Instance
@@ -403,11 +403,11 @@ const Client = () => {
             ref={leftColumnRef}
             style={{ overflow: "hidden", height: height }}
           >
-            {[...images, ...images].map((_, i) => (
+            {[...images, ...images].map((image, i) => (
               <Image
                 key={`left-${i}`}
                 className={`client-logo ${s.grid_logo}`}
-                src={`/clients/${i % 83}.webp`} // Ascending order
+                src={`/clients/${(i % images.length) + 1}.webp`} // Ascending order
                 height={100}
                 width={100}
                 alt="logo"
@@ -422,11 +422,11 @@ const Client = () => {
             ref={rightColumnRef}
             style={{ overflow: "hidden", height: height }}
           >
-            {[...images, ...images].map((_, i) => (
+            {[...images, ...images].map((image, i) => (
               <Image
                 key={`right-${i}`}
                 className={`client-logo ${s.grid_logo}`}
-                src={`/clients/${83 - (i % 83) - 1}.webp`} // Descending order
+                src={`/clients/${images.length - (i % images.length)}.webp`} // Descending order
                 height={100}
                 width={100}
                 alt="logo"
