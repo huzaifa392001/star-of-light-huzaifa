@@ -176,7 +176,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 50px 0;
+  gap: 30px 0;
   @include sm {
     gap: 150px 0;
   }
@@ -582,7 +582,7 @@
 .imgCont {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 190px;
   margin-bottom: 1.25rem;
 
   img {
@@ -596,7 +596,9 @@
     border-radius: 30px;
     overflow: hidden;
   }
+
   &.longImg {
+    height: 400px;
     max-height: 70vh;
   }
 

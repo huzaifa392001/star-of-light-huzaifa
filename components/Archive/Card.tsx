@@ -13,10 +13,13 @@ const Card: React.FC<Props> = ({
   video,
   lessPad,
 }) => {
-
   return (
-    <div className={`${s.archiveCard} ${imgVarient === 'full' && s.archiveFullCard}`}>
-      <figure className={`${s.imgCont} ${imgVarient === "long" && s.longImg}`}>
+    <div
+      className={`${s.archiveCard} ${imgVarient === "full" && s.archiveFullCard}`}
+    >
+      <figure
+        className={`${s.imgCont} ${imgVarient === "long" ? s.longImg : imgVarient}`}
+      >
         {!video ? (
           <Image src={`/archive/${id}.webp`} fill alt={`${heading}`} />
         ) : (
@@ -31,13 +34,9 @@ const Card: React.FC<Props> = ({
       </figure>
       <div className={s.content}>
         {heading.map((e, i) => (
-          <h2 key={i}>
-            {e}
-          </h2>
+          <h2 key={i}>{e}</h2>
         ))}
-        <p>
-          {para}
-        </p>
+        <p>{para}</p>
       </div>
     </div>
   );
