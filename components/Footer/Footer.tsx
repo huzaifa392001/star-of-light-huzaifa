@@ -21,21 +21,29 @@ const Footer = () => {
 
   useGSAP(
     () => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: container?.current,
-          start: "top center",
-          toggleActions: "play none none reverse",
-          fastScrollEnd: true,
-          preventOverlaps: true,
-        },
-        defaults: { ease: "power4.inOut" },
-      })
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: container?.current,
+            start: "top center",
+            toggleActions: "play none none reverse",
+            fastScrollEnd: true,
+            preventOverlaps: true,
+          },
+          defaults: { ease: "power4.inOut" },
+        })
         .from(".footer-star-2", { scale: 0, rotate: 360 })
         .from(".footer-path-1 path", { xPercent: 100, stagger: 0.1 }, "<0.2")
         .from(".footer-path-5 ", { yPercent: 100 }, "<0.2")
-        .from(".footer-nav-1 a", { clipPath: "inset(100% 0% 0% 0%)", stagger: 0.1 }, "<0.2")
-        .from(".footer-nav-2 a", { clipPath: "inset(100% 0% 0% 0%)", stagger: 0.1 });
+        .from(
+          ".footer-nav-1 a",
+          { clipPath: "inset(100% 0% 0% 0%)", stagger: 0.1 },
+          "<0.2"
+        )
+        .from(".footer-nav-2 a", {
+          clipPath: "inset(100% 0% 0% 0%)",
+          stagger: 0.1,
+        });
     },
     { scope: container }
   );
@@ -73,7 +81,6 @@ const Footer = () => {
     }
   }, []);
 
-
   const lenisRef = useRef<any>(null); // Using ref to persist Lenis instance
 
   const lenisSetup = () => {
@@ -93,13 +100,15 @@ const Footer = () => {
 
     requestAnimationFrame(raf);
 
-    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = this.getAttribute("href");
-        if (target) lenis.scrollTo(target);
+    document
+      .querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
+      .forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = this.getAttribute("href");
+          if (target) lenis.scrollTo(target);
+        });
       });
-    });
   };
 
   const scrollToTop = () => {
@@ -116,23 +125,23 @@ const Footer = () => {
     lenisSetup();
   }, []);
 
-  useEffect(() => {
-    const handleRouteChange = () => {
-      scrollToTop();
-    };
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     scrollToTop();
+  //   };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+  //   router.events.on("routeChangeComplete", handleRouteChange);
 
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      scrollToTop();
-    }, 1500);
-  })
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     scrollToTop();
+  //   }, 1500);
+  // });
 
   return (
     <footer ref={container} id="footer" className={s.main}>

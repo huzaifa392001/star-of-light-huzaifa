@@ -305,7 +305,7 @@ const Services = () => {
           return (
             <div
               key={i}
-              style={{ backgroundColor: "#ebebeb", zIndex: i }}
+              style={{ backgroundColor: color, zIndex: i }}
               className={`slide-${i} ${s.slide}`}
             >
               {/* <Elements id={i} /> */}

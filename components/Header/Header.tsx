@@ -33,7 +33,7 @@ const Header = ({
   const tlPathFour = useRef<GSAPTimeline>();
   const tlPathFive = useRef<GSAPTimeline>();
   const tlPathSix = useRef<GSAPTimeline>();
-  const headerNav = useRef<HTMLDivElement>(null)
+  const headerNav = useRef<HTMLDivElement>(null);
 
   const component = [
     { heading: "Work" },
@@ -91,31 +91,30 @@ const Header = ({
               const matchedComponent = components.find(
                 (comp) => comp.heading?.toLowerCase() === id?.toLowerCase()
               );
-              if (matchedComponent?.heading === 'Work') {
+              if (matchedComponent?.heading === "Work") {
                 gsap.to(".header_dotWrapper__pdQ8H", {
                   autoAlpha: 1,
                   ease: "circ.in",
-                  stagger: 0.1
-                })
+                  stagger: 0.1,
+                });
               }
               if (matchedComponent) {
                 setActiveComponentName(matchedComponent.heading);
-              }
-              else {
-                setActiveComponentName('');
+              } else {
+                setActiveComponentName("");
               }
             },
             onLeaveBack: () => {
               const matchedComponent = components.find(
                 (comp) => comp.heading?.toLowerCase() === id?.toLowerCase()
               );
-              if (matchedComponent?.heading.toLowerCase() === 'work') {
-                console.log("headerNav.current=> ", headerNav.current)
+              if (matchedComponent?.heading.toLowerCase() === "work") {
+                console.log("headerNav.current=> ", headerNav.current);
                 gsap.to(".header_dotWrapper__pdQ8H", {
                   autoAlpha: 0,
                   ease: "circ.in",
-                  stagger: 0.1
-                })
+                  stagger: 0.1,
+                });
               }
             },
             onEnterBack: () => {
@@ -124,43 +123,15 @@ const Header = ({
               );
               if (matchedComponent) {
                 setActiveComponentName(matchedComponent.heading);
-              }
-              else {
-                setActiveComponentName('');
+              } else {
+                setActiveComponentName("");
               }
             },
           },
         });
       });
     }, 1000);
-  }, {})
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const sections = components.map((comp) =>
-  //       document.getElementById(comp.heading.toLowerCase())
-  //     );
-  //     const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-  //     sections.forEach((section, index) => {
-  //       if (section) {
-  //         const { offsetTop, clientHeight } = section;
-  //         if (
-  //           scrollPosition >= offsetTop &&
-  //           scrollPosition < offsetTop + clientHeight
-  //         ) {
-  //           setActiveMenus(index);
-  //           setActiveComponentName(components[index].heading);
-  //         }
-  //       }
-  //     });
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [components, setActiveMenus, setActiveComponentName]);
+  }, {});
 
   const handleScrollTo = (index: number) => {
     const element = document.querySelector(
@@ -421,7 +392,7 @@ const Header = ({
     { scope: container }
   );
 
-  const handleClick = contextSafe(() => {
+  const handleClick = contextSafe((e) => {
     toggleNav();
     if (!tl.current!.reversed()) {
       document.body.style.overflow = "";
@@ -431,6 +402,14 @@ const Header = ({
 
     tl.current!.reversed(!tl.current!.reversed());
     setActiveMenu(-1);
+
+    if (e.heading) {
+      const lowercaseHeading = e.heading;
+      const index = components.findIndex(
+        (component) => component.heading === lowercaseHeading
+      );
+      handleScrollTo(index);
+    }
   });
 
   const handlePointerEnter = (color: string, key: number) => {
@@ -520,12 +499,12 @@ const Header = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      const links = document.querySelectorAll<HTMLDivElement>('.scrollLinks'); // Type-casting links as HTMLDivElement
+      const links = document.querySelectorAll<HTMLDivElement>(".scrollLinks"); // Type-casting links as HTMLDivElement
       if (!links.length) return;
 
-      const allElements = document.querySelectorAll<HTMLImageElement | HTMLVideoElement | HTMLIFrameElement>(
-        'img:not(.client-logo), video, iframe'
-      ); // Type-casting media elements
+      const allElements = document.querySelectorAll<
+        HTMLImageElement | HTMLVideoElement | HTMLIFrameElement
+      >("img:not(.client-logo), video, iframe"); // Type-casting media elements
 
       const newActiveLinks: number[] = []; // Array to store indices of overlapping links
 
@@ -560,82 +539,12 @@ const Header = ({
       window.requestAnimationFrame(handleScroll); // Optimize scroll events
     };
 
-    window.addEventListener('scroll', optimizedScroll);
+    window.addEventListener("scroll", optimizedScroll);
 
     return () => {
-      window.removeEventListener('scroll', optimizedScroll); // Clean up the event listener
+      window.removeEventListener("scroll", optimizedScroll); // Clean up the event listener
     };
   }, []);
-
-
-  // useEffect(() => {
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const isAnyElementVisible = entries.some(
-  //         (entry) => entry.isIntersecting
-  //       );
-  //       setIsWhite(isAnyElementVisible);
-  //     },
-  //     { rootMargin: "0px 0px -10% 0px", threshold: 0 }
-  //   );
-
-  //   const targetElements = document.querySelectorAll("img, video");
-
-  //   targetElements.forEach((el) => {
-  //     const parentSection = el.closest("section");
-  //     // Check if the parent section is not "clients" or "archive"
-  //     if (
-  //       parentSection &&
-  //       parentSection.id !== "clients" &&
-  //       parentSection.id !== "archive"
-  //     ) {
-  //       observer.observe(el);
-  //     }
-  //   });
-
-  //   return () => {
-  //     targetElements.forEach((el) => {
-  //       const parentSection = el.closest("section");
-  //       // Unobserve for sections that are not "clients" or "archive"
-  //       if (
-  //         parentSection &&
-  //         parentSection.id !== "clients" &&
-  //         parentSection.id !== "archive"
-  //       ) {
-  //         observer.unobserve(el);
-  //       }
-  //     });
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.target.tagName === "IFRAME") {
-  //           setIsWhite(entry.isIntersecting);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       rootMargin: "0px 0px -80% 0px",
-  //       threshold: 0,
-  //     }
-  //   );
-
-  //   const iframeElement = document.querySelector("iframe");
-
-  //   if (iframeElement) {
-  //     observer.observe(iframeElement);
-  //   }
-
-  //   return () => {
-  //     if (iframeElement) {
-  //       observer.unobserve(iframeElement);
-  //     }
-  //   };
-  // }, []);
 
   const router = useRouter();
   const isMainPage = router.pathname === "/";
@@ -702,18 +611,18 @@ const Header = ({
       </header>
 
       {!isNavOpen && isMainPage && (
-        <div className={`${s.dotNavigation} `} ref={headerNav} >
+        <div className={`${s.dotNavigation} `} ref={headerNav}>
           <div className={s.dotColumn}>
             {headings.map((heading, index) => {
               const isActive = activeComponentName === heading;
               const isLinkWhite = activeWhiteLinks.includes(index); // Check if the current link is in the active links array
-              const colorStyle = { color: isLinkWhite ? 'white' : 'black' }; // Set the color dynamically
+              const colorStyle = { color: isLinkWhite ? "white" : "black" }; // Set the color dynamically
 
               return (
                 <div key={heading} className={s.dotWrapper}>
                   <div className={s.nameContainer}>
                     <div
-                      className={`${s.name} ${isActive ? `${s.activeName}` : ''} scrollLinks`}
+                      className={`${s.name} ${isActive ? `${s.activeName}` : ""} scrollLinks`}
                       onClick={() => handleScrollTo(index)}
                       style={colorStyle} // Apply conditional styling
                     >
@@ -741,7 +650,7 @@ const Header = ({
               <div
                 key={i}
                 data-active={i === activeMenu}
-                onClick={() => { }}
+                onClick={() => {}}
                 onPointerEnter={() => handlePointerEnter(e.color, i)}
                 onPointerLeave={() => handlePointerLeave()}
                 className={s.menuCover}
