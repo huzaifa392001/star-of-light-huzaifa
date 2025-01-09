@@ -392,7 +392,7 @@ const Header = ({
     { scope: container }
   );
 
-  const handleClick = contextSafe((e) => {
+  const handleClick = contextSafe((e: any) => {
     toggleNav();
     if (!tl.current!.reversed()) {
       document.body.style.overflow = "";
