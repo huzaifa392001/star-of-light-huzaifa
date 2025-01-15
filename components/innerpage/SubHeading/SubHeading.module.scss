@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 110px;
+    min-height: 100vh;
+}
+
+.subHeading {
+    font-size: 12vw;
+    font-size: max(2.375rem, 6.875rem);
+    line-height: 7.5rem;
+    font-weight: 500;
+}

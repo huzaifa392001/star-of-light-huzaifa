@@ -1,0 +1,31 @@
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 200px 0;
+    gap: 50px 0;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.description {
+    font-size: 3.125rem;
+    line-height: 4.6875rem;
+}
+
+.addContent {
+    width: 100%;
+    flex: 0 1 100%;
+    padding: 0 110px;
+}
+
+.content {
+    padding: 0 50px 0 110px;
+    flex: 0 1 60%;
+}
+.image {
+    flex: 0 1 40%;
+}

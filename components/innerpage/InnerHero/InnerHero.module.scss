@@ -1,0 +1,28 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // gap: 4rem;
+}
+
+.heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 17vw;
+    font-size: max(9em, 17vw);
+    font-weight: 400;
+    white-space: nowrap;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to top, #000, #000);
+    will-change: transform;
+}

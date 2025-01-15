@@ -1,0 +1,21 @@
+.videoSection {
+    padding: 200px 110px;
+    min-height: 80vh;
+    height: 100%;
+}
+
+.videoWrap {
+    border-radius: 70px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border: 10px solid #000;
+
+    video {
+        height: 100%;
+        max-height: 95vh;
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 16 / 9;
+    }
+}
