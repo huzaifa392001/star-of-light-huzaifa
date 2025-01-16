@@ -1,0 +1,51 @@
+.imageSection {
+    min-height: 100vh;
+    height: 100%;
+    padding: 200px 110px;
+}
+
+.withBg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.fullImg {
+    padding: 0;
+    height: 100vh;
+}
+
+.imageWrap {
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.squareImageWrap {
+    height: 90%;
+    overflow: hidden;
+    border: 10px solid #000;
+    border-radius: 44px;
+}
+
+.fullImgWrap {
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.doubleImgWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

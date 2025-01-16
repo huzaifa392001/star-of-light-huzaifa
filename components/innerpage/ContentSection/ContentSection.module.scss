@@ -7,6 +7,10 @@
     gap: 50px 0;
 }
 
+.leftImgSection {
+    align-items: center;
+}
+
 .logo {
     margin-bottom: 40px;
 }
@@ -14,6 +18,15 @@
 .description {
     font-size: 3.125rem;
     line-height: 4.6875rem;
+
+    & + .description {
+        margin-top: 80px;
+    }
+}
+
+.minDescription {
+    font-size: 1.875rem;
+    line-height: 2.8125rem;
 }
 
 .addContent {
@@ -26,6 +39,14 @@
     padding: 0 50px 0 110px;
     flex: 0 1 60%;
 }
+
+.leftImgContent {
+    padding: 0 110px 0 50px;
+}
+
 .image {
     flex: 0 1 40%;
+    img {
+        width: 100%;
+    }
 }
