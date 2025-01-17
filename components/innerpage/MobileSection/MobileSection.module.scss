@@ -1,0 +1,51 @@
+.mobileWrap {
+    padding: 200px 110px;
+    min-height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 100px;
+}
+
+.imgWrap {
+    height: 90vh;
+    overflow: hidden;
+    width: 100%;
+    img {
+        width: 100%;
+        border-radius: 48px;
+        border: 10px solid #000;
+        max-width: 400px;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        margin: 0 auto;
+    }
+
+    &:first-child {
+        img {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+
+    &:last-child {
+        img {
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+
+    &:nth-child(odd) {
+        margin-top: 80px;
+    }
+}
+
+.threeImages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.twoImages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+}

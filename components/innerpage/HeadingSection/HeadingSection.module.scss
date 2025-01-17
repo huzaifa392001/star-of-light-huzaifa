@@ -1,0 +1,22 @@
+.headingWrapper {
+    position: relative;
+    padding: 200px 0;
+}
+.heading {
+    font-size: 17vw;
+    font-size: max(2.8125rem, 13.75rem);
+    white-space: nowrap;
+    position: relative;
+}
+
+.headingImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.myreelwrap {
+    display: flex;
+    gap: 50px;
+}

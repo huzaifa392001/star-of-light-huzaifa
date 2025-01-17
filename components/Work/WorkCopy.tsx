@@ -41,7 +41,7 @@ const workPaths: { [key: number]: string } = {
   3: "/work/myndyoga",
   4: "/work/vermietet",
   5: "/work/wwtf",
-  6: "/work/Thyssen",
+  6: "/work/thyssen",
 };
 
 const Work = () => {

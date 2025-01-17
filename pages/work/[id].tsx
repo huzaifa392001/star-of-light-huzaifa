@@ -4,11 +4,11 @@ import { GetServerSideProps } from "next";
 import { data as workData } from "@/components/Work/data"; // Ensure the path is correct
 import s from "@/components/Work/work.module.scss";
 import Bauhas from "./bauhas--";
-import Everphone from "./everphone";
-import Monipol from "./monipol";
-import Myndyoga from "./myndyoga";
-import Vermietet from "./vermietet";
-import WWTF from "./wwtf";
+import Everphone from "./everphone--";
+import Monipol from "./monipol--";
+import Myndyoga from "./myndyoga--";
+import Vermietet from "./vermietet--";
+import WWTF from "./wwtf--";
 
 interface Data {
   id: number;

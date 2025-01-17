@@ -44,8 +44,31 @@
     }
 }
 
+.bgImgWrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 10px solid #000;
+    border-radius: 44px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .doubleImgWrap {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.doubleFullImgWrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
+    img {
+        width: 100%;
+        height: auto;
+    }
 }

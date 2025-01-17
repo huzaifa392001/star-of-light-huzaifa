@@ -2411,6 +2411,11 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
+reeller@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/reeller/-/reeller-0.0.5.tgz"
+  integrity sha512-GBYSrb9SkN4K7qB/AacyhBPxrmeKzcYPjlYZ+RSBtKNlI5bngKXxI4gNyBLxxX5wL3d98Z713vbT70d1Ot/d7g==
+
 reflect.getprototypeof@^1.0.4:
   version "1.0.6"
   resolved "https://registry.npmjs.org/reflect.getprototypeof/-/reflect.getprototypeof-1.0.6.tgz"
