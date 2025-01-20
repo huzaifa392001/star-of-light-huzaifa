@@ -1,10 +1,16 @@
+@import "../../../styles/breakpoint";
+
 .headingWrapper {
     position: relative;
-    padding: 200px 0;
+    padding: 100px 0;
+    @include lg {
+        padding: 200px 0;
+    }
 }
+
 .heading {
-    font-size: 17vw;
-    font-size: max(2.8125rem, 13.75rem);
+    font-size: 11.458vw;
+    // font-size: max(2.8125rem, 13.75rem);
     white-space: nowrap;
     position: relative;
 }

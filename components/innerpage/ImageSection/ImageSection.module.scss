@@ -1,7 +1,17 @@
+@import "../../../styles/breakpoint";
+
 .imageSection {
-    min-height: 100vh;
-    height: 100%;
-    padding: 200px 110px;
+    padding: 60px 20px;
+    
+    @include md {
+        padding: 100px 50px;
+    }
+
+    @include lg {
+        min-height: 100vh;
+        height: 100%;
+        padding: 200px 110px;
+    }
 }
 
 .withBg {
@@ -16,6 +26,16 @@
 .fullImg {
     padding: 0;
     height: 100vh;
+    max-height: 200px;
+
+    @include md {
+        max-height: 600px;
+    }
+
+    @include lg {
+        max-height: 100%;
+        height: 100vh;
+    }
 }
 
 .imageWrap {
@@ -64,11 +84,17 @@
 }
 
 .doubleFullImgWrap {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 50px;
     img {
         width: 100%;
         height: auto;
+        &:nth-child(n + 2) {
+            display: none;
+        }
+    }
+
+    @include md {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 50px;
     }
 }

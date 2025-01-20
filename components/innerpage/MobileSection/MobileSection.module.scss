@@ -1,51 +1,92 @@
+@import "../../../styles/breakpoint";
+
 .mobileWrap {
-    padding: 200px 110px;
-    min-height: 100vh;
-    height: 100%;
+    padding: 100px 50px;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 100px;
+    gap: 50px;
+
+    @include md {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include lg {
+        padding: 200px 110px;
+        gap: 100px;
+        min-height: 100vh;
+        height: 100%;
+    }
 }
 
 .imgWrap {
-    height: 90vh;
     overflow: hidden;
-    width: 100%;
+    height: 447px;
+    width: 206px;
+    margin: 0 auto;
+
+    @include md {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        max-height: 600px;
+    }
+
+    @include xl {
+        height: 80vh;
+    }
+
+    @include xxl {
+        height: 90vh;
+    }
+
     img {
         width: 100%;
-        border-radius: 48px;
-        border: 10px solid #000;
-        max-width: 400px;
+        border-radius: 21px;
         height: 100%;
+        width: 100%;
         object-fit: cover;
         object-position: top;
         margin: 0 auto;
-    }
+        border: 5px solid #000;
 
-    &:first-child {
-        img {
-            margin-left: auto;
-            margin-right: 0;
+        @include md {
+            border: 10px solid #000;
+            border: radius 48px;
         }
     }
-
-    &:last-child {
-        img {
-            margin-right: auto;
-            margin-left: 0;
-        }
+    &:nth-child(n + 3) {
+        display: none;
     }
+    @include md {
+        &:first-child {
+            img {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
 
-    &:nth-child(odd) {
-        margin-top: 80px;
+        &:last-child {
+            img {
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
+
+        &:nth-child(odd) {
+            margin-top: 80px;
+        }
     }
 }
 
 .threeImages {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    @include md {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .twoImages {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: center;
+    @include md {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: center;
+    }
 }

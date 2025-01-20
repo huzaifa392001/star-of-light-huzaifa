@@ -32,7 +32,7 @@ const ContentSection: React.FC<SubHeadingProps> = ({
         {/* Logo Section */}
         {logo && (
           <div className={s.logo}>
-            <Image src={logo} alt="Logo" width={400} height={108} />
+            <Image src={logo} alt="Logo" fill />
           </div>
         )}
         {/* First Description */}

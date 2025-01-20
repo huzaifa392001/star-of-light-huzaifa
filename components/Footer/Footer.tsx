@@ -71,12 +71,12 @@ const Footer = () => {
         });
       };
 
-      container?.current.addEventListener("mousemove", handleMouseMove);
-      container?.current.addEventListener("mouseleave", handleMouseLeave);
+      container?.current?.addEventListener("mousemove", handleMouseMove);
+      container?.current?.addEventListener("mouseleave", handleMouseLeave);
 
       return () => {
-        container?.current!.removeEventListener("mousemove", handleMouseMove);
-        container?.current!.removeEventListener("mouseleave", handleMouseLeave);
+        container?.current?.removeEventListener("mousemove", handleMouseMove);
+        container?.current?.removeEventListener("mouseleave", handleMouseLeave);
       };
     }
   }, []);
