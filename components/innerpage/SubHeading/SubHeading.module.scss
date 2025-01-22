@@ -4,15 +4,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 22px;
+    padding: 50px 0;
     height: auto;
+    position: relative;
 
     @include md {
-        padding: 100px 50px;
+        padding: 100px 0;
     }
 
     @include lg {
-        padding: 200px 110px;
+        padding: 200px 0;
         gap: 100px;
         min-height: 100vh;
     }
@@ -22,10 +23,38 @@
     font-weight: 500;
     font-size: 2.375rem;
     line-height: 120%;
+    width: calc(100% - 44px);
+    color: #fff;
 
+    font-family: SaolDisplay, sans-serif;
+    
     @include md {
         font-size: 5.729vw;
         // font-size: max(2.375rem, 6.875rem);
         line-height: 6.25vw;
+        width: calc(100% - 100px);
+    }
+
+    @include lg {
+        width: calc(100% - 220px);
+        // min-height: 100vh;
+    }
+}
+
+.hideHeading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #000;
+    width: calc(100% - 44px);
+
+    @include md {
+        width: calc(100% - 100px);
+    }
+
+    @include lg {
+        width: calc(100% - 220px);
     }
 }

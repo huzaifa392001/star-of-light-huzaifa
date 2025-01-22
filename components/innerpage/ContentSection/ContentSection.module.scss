@@ -30,7 +30,7 @@
     max-width: 250px;
     width: 100%;
     margin-bottom: 10px;
-    
+
     img {
         object-fit: contain;
         object-position: left;
@@ -53,6 +53,9 @@
 .description {
     font-size: 1.25rem;
     line-height: 1.75rem;
+    // opacity: 0;
+    // visibility: hidden;
+    // transform: translateY(10%);
 
     @include md {
         font-size: 2.604vw;

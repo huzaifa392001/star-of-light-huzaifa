@@ -23,11 +23,13 @@
     height: 447px;
     width: 206px;
     margin: 0 auto;
+    transform: translateY(20%) scale(1.2);
+    opacity: 0;
 
     @include md {
         width: 100%;
         height: auto;
-        max-width: 400px;
+        max-width: 300px;
         max-height: 600px;
     }
 
@@ -58,18 +60,17 @@
         display: none;
     }
     @include md {
+        &:nth-child(n + 3) {
+            display: block;
+        }
         &:first-child {
-            img {
-                margin-left: auto;
-                margin-right: 0;
-            }
+            margin-left: auto;
+            margin-right: 0;
         }
 
         &:last-child {
-            img {
-                margin-right: auto;
-                margin-left: 0;
-            }
+            margin-right: auto;
+            margin-left: 0;
         }
 
         &:nth-child(odd) {

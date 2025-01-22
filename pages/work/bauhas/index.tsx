@@ -36,7 +36,7 @@ export default function Index() {
         <VideoSection video="" poster="/work/bauhas/poster.jpg" />
         <ImageSection image="/work/bauhas/webpage1.jpg" />
         <HeadingSection
-          heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
+          heading="Bauhaus Tapate"
           image="/work/bauhas/headingImage1.png"
         />
         <ContentSection
@@ -81,7 +81,7 @@ export default function Index() {
           type="doubleFullImg"
         />
         <HeadingSection
-          heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
+          heading="Bauhaus Tapate"
           image="/work/bauhas/headingImage2.png"
         />
       </Wrapper>

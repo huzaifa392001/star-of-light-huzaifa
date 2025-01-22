@@ -13,6 +13,10 @@
     // font-size: max(2.8125rem, 13.75rem);
     white-space: nowrap;
     position: relative;
+
+    & + .heading {
+        margin-left: 5rem;
+    }
 }
 
 .headingImage {
@@ -25,4 +29,11 @@
 .myreelwrap {
     display: flex;
     gap: 50px;
+}
+
+.headingScroll {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
 }
