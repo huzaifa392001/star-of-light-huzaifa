@@ -33,7 +33,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({
           trigger: imgRef.current,
           toggleActions: "play none none reverse",
           start: "top 65%",
-          markers: true,
+          // markers: true,
         },
       });
 
