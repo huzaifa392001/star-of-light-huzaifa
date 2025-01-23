@@ -4,7 +4,9 @@ import HeadingSection from "@/components/innerpage/HeadingSection/HeadingSection
 import ImageSection from "@/components/innerpage/ImageSection/ImageSection";
 import InnerHero from "@/components/innerpage/InnerHero/InnerHero";
 import MobileSection from "@/components/innerpage/MobileSection/MobileSection";
+import NextPrevSection from "@/components/innerpage/NextPrevSection/NextPrevSection";
 import SubHeading from "@/components/innerpage/SubHeading/SubHeading";
+import TileSection from "@/components/innerpage/TileSection/TileSection";
 import VideoSection from "@/components/innerpage/VideoSection/VideoSection";
 import Wrapper from "@/components/innerpage/Wrapper/Wrapper";
 import Head from "next/head";
@@ -26,18 +28,18 @@ export default function Index() {
           }
         />
         <ContentSection
-          logo={"/work/vermietet/logo.png"}
+          logo={"/work/vermietet/logo.webp"}
           description={[
             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
             "MONIPOL offers a complete range of clinical development and consulting services to a strong customer base of primarily small and mid-size pharmaceutical, biotechnology, and medical device companies.",
           ]}
-          image={"/work/vermietet/img1.jpg"}
+          image={"/work/vermietet/img1.webp"}
         />
-        <VideoSection video="" poster="/work/vermietet/poster.jpg" />
-        <ImageSection image="/work/vermietet/webpage1.jpg" />
+        <VideoSection video="" poster="/work/vermietet/poster.webp" />
+        <ImageSection image="/work/vermietet/webpage1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/vermietet/headingImage1.png"
+          image="/work/vermietet/headingImage1.webp"
         />
         <ContentSection
           type=""
@@ -45,14 +47,14 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/vermietet/img2.jpg"}
+          image={"/work/vermietet/img2.webp"}
           minDescription
           leftImg
         />
         <ImageSection
-          image="/work/vermietet/webpage2.jpg"
+          image="/work/vermietet/webpage2.webp"
           type="withBg"
-          backgroundImage={"/work/vermietet/webpageBg.jpg"}
+          backgroundImage={"/work/vermietet/webpageBg.webp"}
         />
         <SubHeading
           subHeading={
@@ -65,22 +67,38 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/vermietet/img3.jpg"}
+          image={"/work/vermietet/img3.webp"}
           minDescription
         />
-        <ImageSection image="/work/vermietet/webpage3.jpg" type="fullImg" />
+        <TileSection
+          images={[
+            "/work/vermietet/tiles/1.webp",
+            "/work/vermietet/tiles/2.webp",
+            "/work/vermietet/tiles/3.webp",
+            "/work/vermietet/tiles/4.webp",
+            "/work/vermietet/tiles/5.webp",
+            "/work/vermietet/tiles/6.webp",
+            "/work/vermietet/tiles/7.webp",
+            "/work/vermietet/tiles/8.webp",
+          ]}
+        />
         <MobileSection
-          images={["/work/vermietet/mobile1.png", "/work/vermietet/mobile2.png", "/work/vermietet/mobile2.png"]}
+          images={[
+            "/work/vermietet/mobile1.webp",
+            "/work/vermietet/mobile2.webp",
+            "/work/vermietet/mobile2.webp",
+          ]}
         />
         <ImageSection
-          doubleImg={["/work/vermietet/img4.jpg", "/work/vermietet/img5.jpg"]}
+          doubleImg={["/work/vermietet/img4.webp", "/work/vermietet/img5.webp"]}
           type="doubleImg"
         />
-        <ImageSection image="/work/vermietet/fullweb1.jpg" />
+        <ImageSection image="/work/vermietet/fullweb1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/vermietet/headingImage2.png"
+          image="/work/vermietet/headingImage2.webp"
         />
+        <NextPrevSection />
       </Wrapper>
       <Footer />
     </>

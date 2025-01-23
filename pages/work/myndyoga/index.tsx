@@ -4,7 +4,9 @@ import HeadingSection from "@/components/innerpage/HeadingSection/HeadingSection
 import ImageSection from "@/components/innerpage/ImageSection/ImageSection";
 import InnerHero from "@/components/innerpage/InnerHero/InnerHero";
 import MobileSection from "@/components/innerpage/MobileSection/MobileSection";
+import NextPrevSection from "@/components/innerpage/NextPrevSection/NextPrevSection";
 import SubHeading from "@/components/innerpage/SubHeading/SubHeading";
+import TileSection from "@/components/innerpage/TileSection/TileSection";
 import VideoSection from "@/components/innerpage/VideoSection/VideoSection";
 import Wrapper from "@/components/innerpage/Wrapper/Wrapper";
 import Head from "next/head";
@@ -26,18 +28,18 @@ export default function Index() {
           }
         />
         <ContentSection
-          logo={"/work/myndyoga/logo.png"}
+          logo={"/work/myndyoga/logo.webp"}
           description={[
             "TBA 21 is deeply committed to raising awareness about the urgent environmental challenges facing our planet through innovative and thought-provoking art. The redesign aimed to create a digital platform that reflects the organization's visionary work, while offering an immersive and engaging experience for visitors. ",
             "MONIPOL offers a complete range of clinical development and consulting services to a strong customer base of primarily small and mid-size pharmaceutical, biotechnology, and medical device companies.",
           ]}
-          image={"/work/myndyoga/img1.jpg"}
+          image={"/work/myndyoga/img1.webp"}
         />
-        <VideoSection video="" poster="/work/myndyoga/poster.jpg" />
-        <ImageSection image="/work/myndyoga/webpage1.jpg" />
+        <VideoSection video="" poster="/work/myndyoga/poster.webp" />
+        <ImageSection image="/work/myndyoga/webpage1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/myndyoga/headingImage1.png"
+          image="/work/myndyoga/headingImage1.webp"
         />
         <ContentSection
           type=""
@@ -45,14 +47,14 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/myndyoga/img2.jpg"}
+          image={"/work/myndyoga/img2.webp"}
           minDescription
           leftImg
         />
         <ImageSection
-          image="/work/myndyoga/webpage2.jpg"
+          image="/work/myndyoga/webpage2.webp"
           type="withBg"
-          backgroundImage={"/work/myndyoga/webpageBg.jpg"}
+          backgroundImage={"/work/myndyoga/webpageBg.webp"}
         />
         <SubHeading
           subHeading={
@@ -65,25 +67,37 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/myndyoga/img3.jpg"}
+          image={"/work/myndyoga/img3.webp"}
           minDescription
         />
-        <ImageSection image="/work/myndyoga/webpage3.jpg" type="fullImg" />
+        <TileSection
+          images={[
+            "/work/myndyoga/tiles/1.webp",
+            "/work/myndyoga/tiles/2.webp",
+            "/work/myndyoga/tiles/3.webp",
+            "/work/myndyoga/tiles/4.webp",
+            "/work/myndyoga/tiles/5.webp",
+            "/work/myndyoga/tiles/6.webp",
+            "/work/myndyoga/tiles/7.webp",
+            "/work/myndyoga/tiles/8.webp",
+          ]}
+        />
         <MobileSection
           images={[
-            "/work/myndyoga/mobile1.png",
-            "/work/myndyoga/mobile2.png",
+            "/work/myndyoga/mobile1.webp",
+            "/work/myndyoga/mobile2.webp",
           ]}
         />
         <ImageSection
-          doubleImg={["/work/myndyoga/img4.jpg", "/work/myndyoga/img5.jpg"]}
+          doubleImg={["/work/myndyoga/img4.webp", "/work/myndyoga/img5.webp"]}
           type="doubleImg"
         />
-        <ImageSection image="/work/myndyoga/fullweb1.jpg" />
+        <ImageSection image="/work/myndyoga/fullweb1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/myndyoga/headingImage2.png"
+          image="/work/myndyoga/headingImage2.webp"
         />
+        <NextPrevSection />
       </Wrapper>
       <Footer />
     </>

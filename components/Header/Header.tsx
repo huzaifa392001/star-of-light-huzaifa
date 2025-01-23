@@ -86,7 +86,6 @@ const Header = ({
             trigger: sec,
             start: "top center",
             end: "bottom center",
-            // markers: true,
             onEnter: () => {
               const matchedComponent = components.find(
                 (comp) => comp.heading?.toLowerCase() === id?.toLowerCase()

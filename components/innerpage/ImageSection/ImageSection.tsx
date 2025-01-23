@@ -3,6 +3,8 @@ import s from "./ImageSection.module.scss";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 interface ImageSectionProps {
   image?: string;
@@ -19,13 +21,19 @@ const ImageSection: React.FC<ImageSectionProps> = ({
 }) => {
   const imgRef = useRef<HTMLElement>(null);
 
+  const refreshTrigger = () => {
+    console.log("refreshing ScrollTrigger");
+    ScrollTrigger.refresh();
+  };
+
   useGSAP(() => {
     if (imgRef.current) {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: imgRef.current,
           toggleActions: "play none none reverse",
-          start: "top bottom",
+          start: "top 65%",
+          markers: true,
         },
       });
 
@@ -74,6 +82,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({
       >
         {type === "withBg" || type === "fullImg" ? (
           <Image
+            onLoadingComplete={() => refreshTrigger()}
             quality={100}
             src={image || ""}
             height={1080}
@@ -84,6 +93,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({
           <>
             {doubleImg?.map((img, index) => (
               <Image
+                onLoadingComplete={() => refreshTrigger()}
                 key={index}
                 quality={100}
                 src={img}
@@ -95,6 +105,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({
           </>
         ) : (
           <Image
+            onLoadingComplete={() => refreshTrigger()}
             quality={100}
             src={image || ""}
             height={3056}

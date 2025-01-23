@@ -8,7 +8,9 @@ import gsap from "gsap";
 import { memo } from "react";
 import { useRouter } from "next/router";
 import Lenis from "lenis";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
   const container = useRef<HTMLDivElement>(null);
   const starRef = useRef<HTMLDivElement>(null);
@@ -137,11 +139,12 @@ const Footer = () => {
   //   };
   // }, [router.events]);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     scrollToTop();
-  //   }, 1500);
-  // });
+  useEffect(() => {
+    setTimeout(() => {
+      scrollToTop();
+      ScrollTrigger.refresh();
+    }, 1500);
+  });
 
   return (
     <footer ref={container} id="footer" className={s.main}>

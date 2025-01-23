@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import s from "./MobileSection.module.scss";
 import Image from "next/image";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 interface MobileSectionWraps {
   images?: string[];
@@ -10,15 +12,19 @@ interface MobileSectionWraps {
 const MobileSection: React.FC<MobileSectionWraps> = ({ images }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const refreshTrigger = () => {
+    console.log("refreshing ScrollTrigger");
+    ScrollTrigger.refresh();
+  };
+
   useEffect(() => {
     if (sectionRef.current) {
       const images = sectionRef.current.querySelectorAll("figure");
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "20% bottom",
+          start: "top center",
           toggleActions: "play none none reverse",
-          markers: true, // Remove in production
         },
       });
 
@@ -44,7 +50,7 @@ const MobileSection: React.FC<MobileSectionWraps> = ({ images }) => {
         );
       } else {
         // Normal animation for two images
-        tl.from(images, {
+        tl.to(images, {
           y: 0,
           opacity: 1,
           scale: 1,
@@ -65,7 +71,13 @@ const MobileSection: React.FC<MobileSectionWraps> = ({ images }) => {
     >
       {images?.map((img, index) => (
         <figure key={index} className={s.imgWrap}>
-          <Image src={img || ""} height={1020} width={740} alt="" />
+          <Image
+            onLoadingComplete={() => refreshTrigger()}
+            src={img || ""}
+            height={1020}
+            width={740}
+            alt=""
+          />
         </figure>
       ))}
     </div>

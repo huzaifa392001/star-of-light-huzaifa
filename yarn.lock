@@ -2682,6 +2682,7 @@ split-type@^0.3.4:
     react-router-dom "^6.27.0"
     react-scroll "^1.9.0"
     react-use-window-scroll "^1.1.7"
+    reeller "^0.0.5"
     sharp "^0.33.5"
     split-type "^0.3.4"
     star-of-life "file:"

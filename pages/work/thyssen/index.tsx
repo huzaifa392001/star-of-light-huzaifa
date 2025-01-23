@@ -4,6 +4,7 @@ import HeadingSection from "@/components/innerpage/HeadingSection/HeadingSection
 import ImageSection from "@/components/innerpage/ImageSection/ImageSection";
 import InnerHero from "@/components/innerpage/InnerHero/InnerHero";
 import MobileSection from "@/components/innerpage/MobileSection/MobileSection";
+import NextPrevSection from "@/components/innerpage/NextPrevSection/NextPrevSection";
 import SubHeading from "@/components/innerpage/SubHeading/SubHeading";
 import VideoSection from "@/components/innerpage/VideoSection/VideoSection";
 import Wrapper from "@/components/innerpage/Wrapper/Wrapper";
@@ -19,26 +20,26 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Wrapper>
-        <InnerHero heading={["Thyssen","Bornemisza"]} />
+        <InnerHero heading={["Thyssen", "Bornemisza"]} />
         <SubHeading
           subHeading={
             "Welcome to Thyssen, the ultimate destination for anyone looking for stunning and high-quality Bauhaus wallpaper. The website has been designed to provide a seamless and enjoyable shopping experience."
           }
         />
         <ContentSection
-          logo={"/work/thyssen/logo.png"}
+          logo={"/work/thyssen/logo.webp"}
           description={[
             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
             "MONIPOL offers a complete range of clinical development and consulting services to a strong customer base of primarily small and mid-size pharmaceutical, biotechnology, and medical device companies.",
           ]}
-          image={"/work/thyssen/img1.jpg"}
+          image={"/work/thyssen/img1.webp"}
         />
-        <VideoSection video="" poster="/work/thyssen/poster.jpg" />
-        <ImageSection image="/work/thyssen/webpage1.jpg" />
-        <ImageSection image="/work/thyssen/webpage1-1.jpg" />
+        <VideoSection video="" poster="/work/thyssen/poster.webp" />
+        <ImageSection image="/work/thyssen/webpage1.webp" />
+        <ImageSection image="/work/thyssen/webpage1-1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/thyssen/headingImage1.png"
+          image="/work/thyssen/headingImage1.webp"
         />
         <ContentSection
           type=""
@@ -46,14 +47,14 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/thyssen/img2.jpg"}
+          image={"/work/thyssen/img2.webp"}
           minDescription
           leftImg
         />
         <ImageSection
-          image="/work/thyssen/webpage2.jpg"
+          image="/work/thyssen/webpage2.webp"
           type="withBg"
-          backgroundImage={"/work/thyssen/webpageBg.jpg"}
+          backgroundImage={"/work/thyssen/webpageBg.webp"}
         />
         <SubHeading
           subHeading={
@@ -66,25 +67,23 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/thyssen/img3.jpg"}
+          image={"/work/thyssen/img3.webp"}
           minDescription
         />
         <MobileSection
-          images={[
-            "/work/thyssen/mobile1.png",
-            "/work/thyssen/mobile2.png",
-          ]}
+          images={["/work/thyssen/mobile1.webp", "/work/thyssen/mobile2.webp"]}
         />
         <ImageSection
-          doubleImg={["/work/thyssen/img4.jpg", "/work/thyssen/img5.jpg"]}
+          doubleImg={["/work/thyssen/img4.webp", "/work/thyssen/img5.webp"]}
           type="doubleImg"
         />
-        <ImageSection image="/work/thyssen/fullweb1.jpg" />
-        <ImageSection image="/work/thyssen/fullweb1-1.jpg" />
+        <ImageSection image="/work/thyssen/fullweb1.webp" />
+        <ImageSection image="/work/thyssen/fullweb1-1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/thyssen/headingImage2.png"
+          image="/work/thyssen/headingImage2.webp"
         />
+        <NextPrevSection />
       </Wrapper>
       <Footer />
     </>

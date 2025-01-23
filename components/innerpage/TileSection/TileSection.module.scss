@@ -1,0 +1,21 @@
+.tileRows {
+    display: grid;
+    gap: 30rem;
+    margin-left: -10rem;
+    overflow: hidden;
+    max-height: 100vh;
+    background-color: #fff;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.tileRow {
+    height: 100vh;
+    transform: rotate(25deg) translateX(-25%) translateY(-25%);
+    width: 550px;
+    img {
+        width: 100%;
+    }
+
+    &:nth-child(even) {
+        transform: rotate(25deg) translateX(-25%) translateY(-100%);
+    }
+}

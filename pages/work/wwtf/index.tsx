@@ -4,7 +4,9 @@ import HeadingSection from "@/components/innerpage/HeadingSection/HeadingSection
 import ImageSection from "@/components/innerpage/ImageSection/ImageSection";
 import InnerHero from "@/components/innerpage/InnerHero/InnerHero";
 import MobileSection from "@/components/innerpage/MobileSection/MobileSection";
+import NextPrevSection from "@/components/innerpage/NextPrevSection/NextPrevSection";
 import SubHeading from "@/components/innerpage/SubHeading/SubHeading";
+import TileSection from "@/components/innerpage/TileSection/TileSection";
 import VideoSection from "@/components/innerpage/VideoSection/VideoSection";
 import Wrapper from "@/components/innerpage/Wrapper/Wrapper";
 import Head from "next/head";
@@ -26,18 +28,18 @@ export default function Index() {
           }
         />
         <ContentSection
-          logo={"/work/wwtf/logo.png"}
+          logo={"/work/wwtf/logo.webp"}
           description={[
             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
             "MONIPOL offers a complete range of clinical development and consulting services to a strong customer base of primarily small and mid-size pharmaceutical, biotechnology, and medical device companies.",
           ]}
-          image={"/work/wwtf/img1.jpg"}
+          image={"/work/wwtf/img1.webp"}
         />
-        <VideoSection video="" poster="/work/wwtf/poster.jpg" />
-        <ImageSection image="/work/wwtf/webpage1.jpg" />
+        <VideoSection video="" poster="/work/wwtf/poster.webp" />
+        <ImageSection image="/work/wwtf/webpage1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/wwtf/headingImage1.png"
+          image="/work/wwtf/headingImage1.webp"
         />
         <ContentSection
           type=""
@@ -45,14 +47,14 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/wwtf/img2.jpg"}
+          image={"/work/wwtf/img2.webp"}
           minDescription
           leftImg
         />
         <ImageSection
-          image="/work/wwtf/webpage2.jpg"
+          image="/work/wwtf/webpage2.webp"
           type="withBg"
-          backgroundImage={"/work/wwtf/webpageBg.jpg"}
+          backgroundImage={"/work/wwtf/webpageBg.webp"}
         />
         <SubHeading
           subHeading={
@@ -65,22 +67,34 @@ export default function Index() {
             "The Bauhaus wallpaper collection captures the spirit of the movement, with its clean lines, bold shapes, and striking colors. Each design in the collection is a modern interpretation of the classic Bauhaus style, featuring geometric shapes and abstract patterns that reflect the movement’s commitment to simplicity and functionality.",
             "The wallpaper is available in a range of colors and patterns, from monochromatic designs to bold and colorful compositions that make a statement. Whether you’re looking for a subtle accent wall or a bold statement piece, there is a Bauhaus wallpaper design that will suit your needs.",
           ]}
-          image={"/work/wwtf/img3.jpg"}
+          image={"/work/wwtf/img3.webp"}
           minDescription
         />
-        <ImageSection image="/work/wwtf/webpage3.jpg" type="fullImg" />
+        <TileSection
+          images={[
+            "/work/wwtf/tiles/1.webp",
+            "/work/wwtf/tiles/2.webp",
+            "/work/wwtf/tiles/3.webp",
+            "/work/wwtf/tiles/4.webp",
+            "/work/wwtf/tiles/5.webp",
+            "/work/wwtf/tiles/6.webp",
+            "/work/wwtf/tiles/7.webp",
+            "/work/wwtf/tiles/8.webp",
+          ]}
+        />
         <MobileSection
-          images={["/work/wwtf/mobile1.png", "/work/wwtf/mobile2.png"]}
+          images={["/work/wwtf/mobile1.webp", "/work/wwtf/mobile2.webp"]}
         />
         <ImageSection
-          doubleImg={["/work/wwtf/img4.jpg", "/work/wwtf/img5.jpg"]}
+          doubleImg={["/work/wwtf/img4.webp", "/work/wwtf/img5.webp"]}
           type="doubleImg"
         />
-        <ImageSection image="/work/wwtf/fullweb1.jpg" />
+        <ImageSection image="/work/wwtf/fullweb1.webp" />
         <HeadingSection
           heading="Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
-          image="/work/wwtf/headingImage2.png"
+          image="/work/wwtf/headingImage2.webp"
         />
+        <NextPrevSection />
       </Wrapper>
       <Footer />
     </>

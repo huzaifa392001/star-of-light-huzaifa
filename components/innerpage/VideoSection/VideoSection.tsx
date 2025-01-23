@@ -13,18 +13,21 @@ const VideoSection: React.FC<VideoSectionProps> = ({ video, poster }) => {
 
   useEffect(() => {
     const tl = gsap.timeline({
-      scrollTrigger: videoSection?.current,
-      top: "top bottom",
-      markers: true,
+      scrollTrigger: {
+        trigger: videoSection?.current,
+        start: "25% 90%",
+        // markers: true,
+        toggleActions: "play none none reverse",
+      },
     });
 
-    // tl.from(videoRef?.current, {
-    //   yPercent: 20,
-    //   autoAlpha: 0,
-    //   scale: 1.2,
-    //   ease: "power2.out",
-    //   duration: 1,
-    // });
+    tl.to(videoRef?.current, {
+      y: 0,
+      opacity: 1,
+      // scale: 1,
+      ease: "power4.out",
+      duration: 1,
+    });
   }, []);
 
   return (
