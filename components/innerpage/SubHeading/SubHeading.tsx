@@ -22,21 +22,30 @@ const SubHeading: React.FC<SubHeadingProps> = ({ subHeading }) => {
 
       // Split text into characters
       if (headingRef.current) {
-        text = new SplitType(headingRef.current);
+        text = new SplitType(headingRef.current, {
+          types: "lines,words,chars",
+          lineClass: "line",
+          wordClass: "word",
+          charClass: "char",
+        });
       }
 
       // Split hidden text
       if (hiddenHeadingRef.current) {
-        hiddenText = new SplitType(hiddenHeadingRef.current);
+        hiddenText = new SplitType(hiddenHeadingRef.current, {
+          types: "lines,words,chars",
+          lineClass: "line",
+          wordClass: "word",
+          charClass: "char",
+        });
       }
 
       let tl = gsap.timeline({
         scrollTrigger: {
-          trigger: hiddenHeadingRef.current,
+          trigger: headingContainer.current,
           start: "top 70%",
           end: "bottom 70%",
           scrub: 1,
-          // markers: true,
         },
       });
 
@@ -67,10 +76,13 @@ const SubHeading: React.FC<SubHeadingProps> = ({ subHeading }) => {
 
   return (
     <div className={s.wrapper} ref={headingContainer}>
-      <h2 className={s.subHeading} ref={headingRef}>
+      <h2 className={`${s.subHeading}`} ref={headingRef}>
         {subHeading}
       </h2>
-      <h2 className={`${s.subHeading} ${s.hideHeading}`} ref={hiddenHeadingRef}>
+      <h2
+        className={`${s.subHeading} ${s.hideHeading} hiddenHeading`}
+        ref={hiddenHeadingRef}
+      >
         {subHeading}
       </h2>
     </div>

@@ -134,3 +134,9 @@ main {
 .client-para-word {
   clip-path: inset(0% 100% 0% 0%);
 }
+
+.hiddenHeading .line {
+  height: 100%;
+  display: inline-block;
+  // line-height: 7vw;
+}

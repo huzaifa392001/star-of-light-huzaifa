@@ -44,7 +44,7 @@ const MobileSection: React.FC<MobileSectionWraps> = ({ images }) => {
             scale: 1,
             ease: "power4.out",
             duration: 1,
-            stagger: 0.2,
+            // stagger: 0.2,
           },
           "-=0.75" // Overlap with the middle image animation
         );

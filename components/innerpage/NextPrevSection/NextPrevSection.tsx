@@ -24,7 +24,12 @@ const NextPrevSection: React.FC<NextPrevSectionProps> = ({
       <div className={`${s.nextPrevSection}`}>
         <div className={`${s.projectRow}`}>
           <div className={`${s.projectBox}`}>
-            <h3 className={`${s.prevHeading}`}>previous Project</h3>
+            <div className={`${s.prevHeadingWrapper}`}>
+              <h3 className={`${s.prevHeading}`}>previous Project</h3>
+              <h3 className={`${s.prevHeading} ${s.hiddenHeading}`}>
+                previous Project
+              </h3>
+            </div>
             <figure className={`${s.imgWrapper}`}>
               {/* <Image
                 onLoadingComplete={() => refreshTrigger()}
@@ -36,7 +41,12 @@ const NextPrevSection: React.FC<NextPrevSectionProps> = ({
             <h2 className={`${s.projectHeading}`}>previous Project Name</h2>
           </div>
           <div className={`${s.projectBox}`}>
-            <h3 className={`${s.prevHeading}`}>next Project</h3>
+            <div className={`${s.prevHeadingWrapper}`}>
+              <h3 className={`${s.prevHeading}`}>next Project</h3>
+              <h3 className={`${s.prevHeading} ${s.hiddenHeading}`}>
+                next Project
+              </h3>
+            </div>
             <figure className={`${s.imgWrapper}`}>
               {/* <Image
                 onLoadingComplete={() => refreshTrigger()}
